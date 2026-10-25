@@ -1,0 +1,61 @@
+.toggle {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    width: 84px;
+    height: 44px;
+    cursor: pointer;
+}
+
+.toggle-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Case invisible, mais toujours là pour le clavier et les lecteurs d'écran */
+.toggle-input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: inherit;
+}
+
+.toggle-track {
+    position: absolute;
+    inset: 0;
+    background: #d0d5dd;
+    border-radius: var(--radius-pill);
+    box-shadow: inset 0 0 0 2px #bcc2cc;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toggle-handle {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+/* Allumé : vert (présent) */
+.toggle-input:checked + .toggle-track {
+    background: var(--color-success);
+    box-shadow: inset 0 0 0 2px var(--color-success-dark);
+}
+
+.toggle-input:checked + .toggle-track .toggle-handle {
+    transform: translateX(40px);
+}
+
+/* Visible au clavier (Tab) */
+.toggle-input:focus-visible + .toggle-track {
+    outline: 3px solid rgba(155, 14, 22, 0.35);
+    outline-offset: 2px;
+}

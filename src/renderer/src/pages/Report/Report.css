@@ -1,0 +1,204 @@
+.report-container {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* ---------- Commandes (écran seulement) ---------- */
+.report-header {
+    margin-bottom: 16px;
+}
+
+.report-header h1 {
+    margin: 0 0 12px;
+    font-size: 1.4rem;
+}
+
+.report-controls {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.report-controls .field {
+    margin-bottom: 0;
+}
+
+/* ---------- Document ---------- */
+.report-document {
+    --rs: 1; /* échelle des tailles : 1 à l'écran, 0,8 à l'impression (comme l'échelle 80 % d'Excel) */
+
+    background: #fff;
+    color: #000;
+    padding: 20px 24px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    font-family: "Bookman Old Style", Bookman, "URW Bookman", "Times New Roman", serif;
+    font-size: calc(12pt * var(--rs));
+}
+
+.report-sheet {
+    width: 100%;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.report-table th,
+.report-table td {
+    border: 1px solid #000;
+    padding: 0 3px;
+    height: calc(15pt * var(--rs));
+    line-height: 1.15;
+    font-weight: normal;
+    overflow: hidden;
+}
+
+/* ---------- Ligne 1 : titre et semaine ---------- */
+.report-table .cell-title,
+.report-table .cell-blank,
+.report-table .cell-week {
+    border: none;
+    height: calc(20.25pt * var(--rs));
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.report-table .cell-title {
+    font-size: calc(14pt * var(--rs));
+    border-bottom: 1px solid #000;
+}
+
+.report-table .cell-week {
+    font-size: calc(12pt * var(--rs));
+}
+
+/* ---------- Ligne 2 : bandeau ---------- */
+.report-table .cell-banner {
+    height: calc(24pt * var(--rs));
+    text-align: center;
+    font-size: calc(16pt * var(--rs));
+    font-weight: bold;
+}
+
+/* ---------- Ligne 3 : noms des jours ---------- */
+.report-table .cell-label {
+    height: calc(18.75pt * var(--rs));
+    text-align: left;
+    white-space: nowrap;
+}
+
+.report-table .cell-day {
+    height: calc(18.75pt * var(--rs));
+    text-align: center;
+    vertical-align: top;
+}
+
+/* ---------- Ligne 4 : numéros des jours ---------- */
+.report-table .cell-days-label {
+    height: calc(14.1pt * var(--rs));
+    text-align: center;
+}
+
+.report-table .cell-day-number {
+    height: calc(14.1pt * var(--rs));
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+/* ---------- Ligne 5 : colonnes ---------- */
+.report-table .cell-head-left {
+    height: calc(14.1pt * var(--rs));
+    text-align: left;
+}
+
+.report-table .cell-head-time {
+    height: calc(14.1pt * var(--rs));
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+/* ---------- Lignes des employés ---------- */
+.report-table .cell-num {
+    text-align: left;
+}
+
+.report-table .cell-name {
+    text-align: left;
+    overflow-wrap: anywhere; /* un nom très long passe à la ligne plutôt que d'être coupé */
+}
+
+.report-table .cell-firstname {
+    font-family: "Times New Roman", Times, serif;
+    overflow-wrap: anywhere;
+}
+
+.report-table .cell-time {
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ---------- Bas de page : sous la colonne L ---------- */
+.report-footer {
+    margin: 18px 0 0;
+    padding-left: 69.6%;
+}
+
+/* ---------- Impression : A4 paysage, échelle 80 % ---------- */
+@page {
+    size: A4 landscape;
+    margin: 19mm 18mm;
+}
+
+@media print {
+    .navbar,
+    .sidebar,
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    .layout-main {
+        margin-left: 0;
+        padding: 0;
+        min-height: 0;
+        background: #fff;
+    }
+
+    .report-container {
+        max-width: none;
+    }
+
+    .report-document {
+        --rs: 0.8;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* Même largeur que la feuille Excel à 80 % */
+    .report-sheet {
+        width: 213mm;
+    }
+
+    .report-table thead {
+        display: table-header-group; /* les en-têtes se répètent sur chaque page */
+    }
+
+    .report-table tr {
+        break-inside: avoid;
+    }
+}

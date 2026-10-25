@@ -1,0 +1,47 @@
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    padding: 24px 32px;
+}
+
+.login-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.login-logo {
+    height: 120px;
+    width: auto;
+}
+
+.login-title {
+    margin: 0;
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--color-primary);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    margin-bottom: 0;
+}
+
+/* Fenêtre étroite : on empile le logo et le formulaire */
+@media (max-width: 860px) {
+    .login-page {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .login-brand {
+        align-items: center;
+        text-align: center;
+    }
+}

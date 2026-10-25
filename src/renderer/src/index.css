@@ -1,0 +1,58 @@
+:root {
+    /* ---------- Marque NIOTO (estimées d'après le logo) ---------- */
+    --color-primary: #9b0e16;
+    /* rouge : actions principales */
+    --color-primary-dark: #7a0b12;
+    /* survol */
+    --color-primary-light: #fbeaeb;
+    /* fond léger, anneau de focus */
+
+    --color-accent: #e3a21a;
+    /* doré : accents, badges */
+    --color-accent-light: #fdf3dc;
+
+    --color-info: #1d5fa8;
+    /* bleu : liens, informations */
+    --color-info-light: #e1edf9;
+
+    /* ---------- États ---------- */
+    --color-success: #2e7d4f;
+    /* présent, réussite */
+    --color-success-dark: #226240;
+    --color-success-light: #e4f3ea;
+
+    --color-danger: #d92d20;
+    /* erreurs, suppression */
+    --color-danger-dark: #b42318;
+    --color-danger-light: #fdecea;
+
+    /* ---------- Neutres ---------- */
+    --color-text: #1f2933;
+    --color-text-muted: #667085;
+    --color-border: #d9dde3;
+    --color-bg: #f5f6f8;
+    --color-surface: #ffffff;
+
+    /* ---------- Forme ---------- */
+    --radius: 10px;
+    /* boutons, champs */
+    --radius-lg: 14px;
+    /* cartes */
+    --radius-pill: 999px;
+    /* interrupteurs, badges */
+    --shadow: 0 1px 3px rgba(16, 24, 40, 0.1);
+    --shadow-lg: 0 4px 12px rgba(16, 24, 40, 0.12);
+    /* anneau rouge Nioto, visible sur fond blanc */
+    --focus-ring: 0 0 0 3px rgba(155, 14, 22, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+}

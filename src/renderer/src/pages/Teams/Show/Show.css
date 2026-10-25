@@ -1,0 +1,38 @@
+/* --- Liste des membres de l'équipe --- */
+.team-members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team-member-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: var(--color-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+}
+
+.team-member-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.team-member-name {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.team-member-job {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.show-empty {
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin: 0;
+}

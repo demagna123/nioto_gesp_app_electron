@@ -1,0 +1,34 @@
+.schedule-form-card {
+    margin-bottom: 24px;
+    padding: 20px;
+}
+
+.schedule-form {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-end; /* Aligne tout sur le bas */
+}
+
+.schedule-field {
+    flex: 1; /* Les champs prennent la même largeur */
+    min-width: 180px; 
+}
+
+/* On force la hauteur des inputs pour qu'ils soient identiques */
+.schedule-field .field-control {
+    height: 42px;
+}
+
+/* Le conteneur du bouton */
+.schedule-action {
+    height: 42px; /* Même hauteur que les inputs */
+    display: flex;
+    align-items: center;
+}
+
+/* Optionnel : Si ton bouton a une hauteur par défaut différente, on la force */
+.schedule-action button {
+    height: 42px;
+    margin-top: 22px; /* Compense la hauteur du label au-dessus des autres champs */
+}
